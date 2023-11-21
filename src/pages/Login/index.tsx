@@ -7,8 +7,9 @@ import { api } from "../../services/api";
 import { ILoginProps } from "./interfaces";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { configToast } from "./configToast";
+import { useUser } from "../../contexts/UserProvider";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -24,10 +25,10 @@ const Login = () => {
     isLogged(data)
       .then((res) => {
         localStorage.setItem("@USERTOKEN", res.data.token);
-        toast.success("Logado!", configToast)
-        navigate("/dashboard");
+        toast.success("Logado!", configToast);
+        navigate("/dashboard/tech");
       })
-      .catch((err) => toast.error("Email ou Senha Inválidos!", configToast));
+      .catch((err) => toast.error("Usuário ou Senha Inválidos", configToast));
   };
 
   return (

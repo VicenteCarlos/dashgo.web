@@ -1,6 +1,5 @@
-import { Dashboard } from "../pages/Dashboard";
-import { Login } from "../pages/Login";
-import { Register } from "../pages/Register";
+import { Login , DashboardTech, DashboardWork } from "../pages/";
+
 
 const routes = [
   {
@@ -8,12 +7,12 @@ const routes = [
     element: <Login />,
   },
   {
-    path: "/register",
-    element: <Register />,
+    path: "/dashboard/tech",
+    element: <DashboardTech />,
   },
   {
-    path: "/dashboard",
-    element: <Dashboard />,
+    path: "/dashboard/work",
+    element: <DashboardWork />,
   },
 ];
 
