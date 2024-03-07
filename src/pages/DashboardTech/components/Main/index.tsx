@@ -12,7 +12,7 @@ const Main = () => {
   const { tech } = useUser();
   const { isModalTech, handleModalTech } = useModal();
   const navigate = useNavigate();
-
+  
   return (
     <Container isModalTech={isModalTech}>
       <ToastContainer />
