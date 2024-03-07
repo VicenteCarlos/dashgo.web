@@ -4,13 +4,17 @@ import { Container } from "./style";
 import { FiBell, FiUserPlus } from "react-icons/fi";
 import { BiDoorOpen } from "react-icons/bi";
 import { useNavigate } from "react-router-dom"
+import { QueryCache } from "react-query"
 
 const Header = () => {
   const { data, isFetching } = useUser();
   const { isModalTech } = useModal();
   const navigate = useNavigate()
 
+  const queryCache = new QueryCache()
+
   const handleExit = () => {
+    queryCache.clear()
     localStorage.clear()
     navigate("/")
   }
