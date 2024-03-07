@@ -37,7 +37,7 @@ const Main = () => {
             <p className="tech-p">TECNOLOGIA</p>
             <p className="created-p">CRIADO EM</p>
           </div>
-          {tech.map((item, i) => (
+          {tech.map((item: any, i: number) => (
             <Card key={i} item={item} />
           ))}
         </div>

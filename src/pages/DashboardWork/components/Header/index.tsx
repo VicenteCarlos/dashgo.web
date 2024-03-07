@@ -1,12 +1,12 @@
 import { useModal } from "../../../../contexts/ModalProvider";
 import { useUser } from "../../../../contexts/UserProvider";
 import { Container } from "./style";
-import { FiBell, FiUserPlus } from "react-icons/fi";
+import { FiBell } from "react-icons/fi";
 import { BiDoorOpen } from "react-icons/bi";
 import { useNavigate } from "react-router-dom"
 
 const Header = () => {
-  const { data, isFetching } = useUser();
+  const { data } = useUser();
   const { isModalWork } = useModal();
   const navigate = useNavigate()
 

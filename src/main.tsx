@@ -6,7 +6,6 @@ import { GlobalStyle } from "./styles/global";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./styles/theme";
 import { QueryClientProvider, QueryClient } from "react-query";
-import { UserProvider } from "./contexts/UserProvider";
 import { ContextProvider } from "./contexts";
 
 const queryClient = new QueryClient();

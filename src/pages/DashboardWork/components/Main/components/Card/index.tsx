@@ -23,7 +23,10 @@ const Card = ({ item }: any) => {
 
   const handleRemove = () => {
     remWork()
-      .then((res) => removeWork(item))
+      .then((res) => {
+        console.log(res)
+        removeWork(item)
+      })
       .catch((err) => console.log(err));
   };
 

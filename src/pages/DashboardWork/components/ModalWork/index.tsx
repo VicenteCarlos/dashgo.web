@@ -45,7 +45,10 @@ const ModalWork = () => {
         addWork(res);
         handleModalWork();
       })
-      .catch((err) => toast.error("Error", configToast));
+      .catch((err) => {
+        console.log(err)
+        toast.error("Error", configToast)
+      });
   };
 
   return (
