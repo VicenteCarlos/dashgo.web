@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { configToast } from "./configToast";
-import { useUser } from "../../contexts/UserProvider";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -28,7 +27,10 @@ const Login = () => {
         toast.success("Logado!", configToast);
         navigate("/dashboard/tech");
       })
-      .catch((err) => toast.error("Usuário ou Senha Inválidos", configToast));
+      .catch((err) => {
+        console.log(err)
+        toast.error("Usuário ou Senha Inválidos", configToast)
+      });
   };
 
   return (

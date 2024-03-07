@@ -1,4 +1,7 @@
-const configToast = {
+import { ToastOptions } from "react-toastify";
+
+
+const configToast: ToastOptions = {
   position: "top-right",
   autoClose: 2000,
   hideProgressBar: false,

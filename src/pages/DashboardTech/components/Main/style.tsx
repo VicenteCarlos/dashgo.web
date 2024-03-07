@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
+import { IPropsTech } from "../..";
 
-const Container = styled.main`
+const Container = styled.main<IPropsTech>`
   color: white;
   opacity: ${({ isModalTech }) => (isModalTech ? "20%" : "100%")};
   z-index: ${({ isModalTech }) => (isModalTech ? "absolute" : "initial")};

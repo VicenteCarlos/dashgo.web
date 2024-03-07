@@ -9,7 +9,7 @@ import { formSchema } from "./schema";
 import { api } from "../../../../services/api";
 import { IFormSubmitProps } from "./interfaces";
 import { configToast } from "../../../Login/configToast";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useUser } from "../../../../contexts/UserProvider";
 
@@ -25,7 +25,10 @@ const ModalTech = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const handleRequest = async (formData, token) => {
+  const handleRequest = async (
+    formData: IFormSubmitProps,
+    token: string | null
+  ) => {
     try {
       const { data } = await api.post("/users/techs", formData, {
         headers: {
@@ -35,6 +38,7 @@ const ModalTech = () => {
       return data;
     } catch (err) {
       console.log("erro: ", err);
+      toast.error("Error", configToast);
     }
   };
 
@@ -47,7 +51,10 @@ const ModalTech = () => {
         addTech(res);
         handleModalTech();
       })
-      .catch((err) => toast.error("Error", configToast));
+      .catch((err) => {
+        console.log(err);
+        toast.error("Error", configToast);
+      });
   };
 
   const statusTech = ["Iniciante", "Intermediário", "Avançando"];

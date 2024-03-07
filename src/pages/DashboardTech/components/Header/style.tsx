@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
+import { IPropsTech } from "../../";
 
-const Container = styled.header`
+const Container = styled.header<IPropsTech>`
   color: white;
   opacity: ${({ isModalTech }) => (isModalTech ? "20%" : "100%")};
 

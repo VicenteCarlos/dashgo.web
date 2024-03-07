@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
+import { IPropsWork } from "../..";
 
-const Container = styled.main`
+const Container = styled.main<IPropsWork>`
   color: white;
   opacity: ${({ isModalWork }) => (isModalWork ? "20%" : "100%")};
   z-index: ${({ isModalWork }) => (isModalWork ? "absolute" : "initial")};
